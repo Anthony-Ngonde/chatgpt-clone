@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './HomePage.css'
 import { TypeAnimation } from 'react-type-animation';
 
 const HomePage = () => {
+
+  const [typingStatus, setTypingStatus] = useState("human1")
+
+
+
   return (
     <div className='homepage'>
       <img src="/orbital.png" alt="" className='orbital' />
@@ -20,20 +25,31 @@ const HomePage = () => {
           </div>
           <img src="/bot.png" alt="" className='bot'/>
           <div className="chat">
-            <img src="/bot.png" alt="" />
+            <img src={typingStatus === "human1" ? "/human1.jpeg" : typingStatus === 'human2' ? "/human2.jpeg" : "bot.png"} alt="" />
           <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
                 'Human:We produce food for Mice',
-                1000, // wait 1s before replacing "Mice" with "Hamsters"
+                2000, ()=>{
+                  setTypingStatus("bot")
+                },
+                'Bot:We produce food for Hamsters',
+                2000,  ()=>{
+                  setTypingStatus("human2")
+                },
                 'Human2:We produce food for Hamsters',
-                1000,
+                2000,  ()=>{
+                  setTypingStatus("bot")
+                },
                 'Bot:We produce food for Chinchillas',
-                1000
+                2000,  ()=>{
+                  setTypingStatus("human1")
+                },
               ]}
               wrapper="span"
               repeat={Infinity}
               cursor={true}
+              omitDeletionAnimation={true}
             />
           </div>
         </div>
