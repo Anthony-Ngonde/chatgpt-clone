@@ -20,9 +20,9 @@ const RootLayout = () => {
         <span>ANTHONY AI</span>
         </Link>
         <div className="user"> 
-        <SignedOut>
+        {/* <SignedOut>
         <SignInButton />
-        </SignedOut>
+        </SignedOut> */}
          <SignedIn>
          <UserButton />
          </SignedIn>
