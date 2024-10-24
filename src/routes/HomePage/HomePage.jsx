@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './HomePage.css'
+import { TypeAnimation } from 'react-type-animation';
 
 const HomePage = () => {
   return (
@@ -18,6 +19,23 @@ const HomePage = () => {
           <div className="bg"></div>
           </div>
           <img src="/bot.png" alt="" className='bot'/>
+          <div className="chat">
+            <img src="/bot.png" alt="" />
+          <TypeAnimation
+              sequence={[
+                // Same substring at the start will only be typed out once, initially
+                'Human:We produce food for Mice',
+                1000, // wait 1s before replacing "Mice" with "Hamsters"
+                'Human2:We produce food for Hamsters',
+                1000,
+                'Bot:We produce food for Chinchillas',
+                1000
+              ]}
+              wrapper="span"
+              repeat={Infinity}
+              cursor={true}
+            />
+          </div>
         </div>
         
       </div>
