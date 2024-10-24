@@ -1,10 +1,10 @@
 import React from 'react'
 import { SignIn } from '@clerk/clerk-react'
-import './SignUpPage.css'
+import './SignInPage.css'
 
 const SignInPage = () => {
   return (
-    <div className='signInPage'><SignIn path="/sign-in "/></div>
+    <div className='signInPage'><SignIn path="/sign-in" /></div>
   )
 }
 
