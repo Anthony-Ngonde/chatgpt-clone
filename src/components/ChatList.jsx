@@ -10,6 +10,8 @@ const ChatList = () => {
         <Link to="/dashboard">Explore Tonny AI</Link>
         <Link to="/dashboard">Contact</Link>
         <hr/>
+        <span className='title'>RECENT CHATS</span>
+
         <div className="list">
             <Link to="/">My chat title</Link>
             <Link to="/">My chat title</Link>
