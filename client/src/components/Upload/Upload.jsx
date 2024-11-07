@@ -25,23 +25,24 @@ const authenticator =  async () => {
 
 const Upload = ({ setImg }) => {
 
-    const onError = err => {
+    const onError = (err) => {
         console.log("Error", err);
       };
       
       const onSuccess = (res) => {
         console.log("Success", res);
-        setImg(prev=>({ ...prev, isLoading: false, dbData: res }))
+        setImg((prev) => ({ ...prev, isLoading: false, dbData: res }))
       };
       
-      const onUploadProgress = progress => {
+      const onUploadProgress = (progress) => {
         console.log("Progress", progress);
       };
       
-      const onUploadStart = evt => {
+      const onUploadStart = (evt) => {
         console.log("Start", evt);
-        setImg(prev=>({ ...prev, isLoading: true }))
+        setImg((prev)=>({ ...prev, isLoading: true }))
       };
+      
       
   return (
     <IKContext 
