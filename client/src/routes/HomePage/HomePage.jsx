@@ -5,9 +5,14 @@ import { TypeAnimation } from 'react-type-animation';
 
 const HomePage = () => {
 
-  const [typingStatus, setTypingStatus] = useState("human1")
+  const [typingStatus, setTypingStatus] = useState("human1");
 
 
+// const test = async ()=>{
+//   await fetch ("http://localhost:3000/api/test", {
+//     credentials:"include",
+//   });
+// };
 
   return (
     <div className='homepage'>
@@ -17,6 +22,7 @@ const HomePage = () => {
         <h2>Supercharge your creativity and productivity</h2>
         <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum cum nostrum adipisci expedita maxime, sequi distinctio similique non itaque reprehenderit minus sint dicta harum, cupiditate provident, corporis eos nobis. Perspiciatis!</h3>
         <Link to="/dashboard">Get Started</Link>
+        {/* <button onClick={test}>TEST BACKEND AUTH</button> */}
       </div>
       <div className="right">
         <div className="imgContainer">

@@ -1,58 +1,58 @@
-import React from 'react'
-import './DashboardPage.css'
+import './DashboardPage.css';
 import {useAuth} from "@clerk/clerk-react"
 
 const DashboardPage = () => {
 
-  const { userId } = useAuth()
-
-  const handleSubmit = async (e)=>{
+  const {userId} = useAuth()
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const text = e.target.text.value
-    if(!text) return
+    const text = e.target.text.value;
+    if (!text) return;
 
-    await fetch("http://localhost:3000/api/chats",{
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json"
-      },
-      body:JSON.stringify({ userId, text })
-    })
+        await fetch("http://localhost:3000/api/chats", {
+        method: "POST",
+        credentials:"include",
+        headers: {
+          "Content-Type": "application/json",  
+        },
+        body: JSON.stringify({userId,text}), 
+      });
   };
 
+  
 
   return (
-    <div className='dashboardPage'>
+    <div className="dashboardPage">
       <div className="texts">
         <div className="logo">
-          <img src="/logo.png" alt="" />
+          <img src="/logo.png" alt="Logo" />
           <h1>TONNY AI</h1>
         </div>
         <div className="options">
           <div className="option">
-            <img src="/chat.png" alt="" />
+            <img src="/chat.png" alt="Chat Icon" />
             <span>Create a New Chat</span>
           </div>
           <div className="option">
-            <img src="/image.png" alt="" />
+            <img src="/image.png" alt="Image Icon" />
             <span>Analyze Images</span>
           </div>
           <div className="option">
-            <img src="/code.png" alt="" />
+            <img src="/code.png" alt="Code Icon" />
             <span>Help me with my code</span>
           </div>
         </div>
       </div>
       <div className="formContainer">
         <form onSubmit={handleSubmit}>
-          <input type="text" name='text' placeholder='Ask me anything...' />
+          <input type="text" name="text" placeholder="Ask me anything..." />
           <button>
-            <img src="/arrow.png" alt="" />
+            <img src="/arrow.png" alt="Submit" />
           </button>
         </form>
-        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default DashboardPage
+export default DashboardPage;

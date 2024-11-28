@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import './Upload.css'
 import { IKContext, IKImage, IKUpload } from 'imagekitio-react';
 
 const urlEndpoint = import.meta.env.VITE_IMAGE_KIT_ENDPOINT;
