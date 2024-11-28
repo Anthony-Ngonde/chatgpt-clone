@@ -12,7 +12,7 @@ const ChatList = () => {
       }).then((res) =>
         res.json(),
       ),
-  })
+  });
 
 
 
