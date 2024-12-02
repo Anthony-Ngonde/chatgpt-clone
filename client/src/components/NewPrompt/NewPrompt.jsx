@@ -115,10 +115,18 @@ const NewPrompt = ({ data }) => {
     add(text, false);
   };
 
+  // IN PRODUCTION WE DON'T NEED IT
+
+  const hasRun = useRef(false)
+
   useEffect(()=>{
-    if(data?.history?.length === 1) {
-      add(data.history[0].parts[0].text, true)
+    if (!hasRun.current){
+      if(data?.history?.length === 1) {
+        add(data.history[0].parts[0].text, true)
+      }
     }
+    hasRun.current = true;
+    
   },[]);
 
   return (
